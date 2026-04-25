@@ -16,12 +16,15 @@ export class AppComponent {
   users = DUMMY_USERS;
   //selectedId: string = DUMMY_USERS[0].id
   selectedId?: string;
+  addingTask?: boolean;
 
   get selectedUser() {
     return this.users.find(user => user.id === this.selectedId)!;
   }
   onSelectUser(id: string) {
     this.selectedId = id;
-    console.log('Selected user with id:' + id);
+  }
+  onAddTask(addingTask: boolean) {
+    this.addingTask = true;
   }
 }
